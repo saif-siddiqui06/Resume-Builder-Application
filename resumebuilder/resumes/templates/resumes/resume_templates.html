@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Choose a Template{% endblock %}
+
+{% block content %}
+<style>
+/* Style the heading */
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Style the templates container */
+.templates {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+
+/* Style individual templates */
+.template {
+  background-color: black;
+  padding: 20px;
+  margin: 1em;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  max-width: 300px;
+}
+
+.template:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style template images */
+.template img {
+  width: 50% ;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Style the preview buttons */
+.template .button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color:  #121212;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.template .button:hover {
+  background-color: #0056b3;
+}
+
+/* Style template descriptions */
+.template p {
+  font-size: 1em;
+  color: white;
+  margin: 0.5em 0;
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 768px) {
+  .templates {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .template {
+    width: 80%;
+  }
+}
+
+</style>
+
+<h1>Select a Resume Template</h1>
+<div class="templates">
+    <div class="template">
+        <img src="{% static 'images/template1_preview.png' %}" alt="Template 1">
+        <p>Modern and clean design suitable for tech professionals.</p>
+        <a href="{% url 'preview' %}?template=template1" class="button">Preview Template 1</a>
+    </div>
+    <div class="template">
+        <img src="{% static 'images/template2_preview.png' %}" alt="Template 2">
+        <p>Elegant layout with a focus on experience and skills.</p>
+        <a href="{% url 'preview' %}?template=template2" class="button">Preview Template 2</a>
+    </div>
+    <div class="template">
+        <img src="{% static 'images/cv.png' %}" alt="Template 3">
+        <p>Creative template perfect for designers and artists.</p>
+        <a href="{% url 'preview' %}?template=template3" class="button">Preview Template 3</a>
+    </div>
+</div>
+{% endblock %}

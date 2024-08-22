@@ -1,0 +1,177 @@
+/* Base Dark Theme Colors */
+body {
+  background: linear-gradient(-11deg, black, transparent);
+  color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #212121, #424242);
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+.hero .button {
+  background-color: #ff9800;
+  color: #121212;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero .button:hover {
+  background-color: #ffb74d;
+  transform: scale(1.05);
+}
+
+/* Features Section */
+.features {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #1c1c1c;
+}
+
+.features h2 {
+  color: #ff9800;
+  margin-bottom: 40px;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background-color: #252525;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card h3 {
+  margin-top: 15px;
+  color: #ffeb3b;
+}
+
+.feature-card p {
+  color: #e0e0e0;
+}
+
+.feature-card img {
+  max-width: 60px;
+  margin-bottom: 15px;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Testimonials Section */
+.testimonial {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #1a1a1a, #2c2c2c);
+  color: #fff;
+  text-align: center;
+}
+
+.testimonial h2 {
+  color: #ff9800;
+  margin-bottom: 40px;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background-color: #333333;
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
+  margin-bottom: 20px;
+}
+
+.testimonial-card p {
+  font-size: 1.1em;
+  color: #e0e0e0;
+}
+
+.testimonial-card footer {
+  margin-top: 15px;
+  font-style: italic;
+  color: #ffeb3b;
+}
+
+/* ATS Tips Section */
+.ats-tips {
+  padding: 60px 20px;
+  background-color: #252525;
+  color: #cfcfcf;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.ats-tips h2 {
+  color: #ff9800;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ats-tips ol {
+  margin-left: 20px;
+}
+
+/* CTA Section */
+.cta {
+  padding: 60px 20px;
+  background-color: #1c1c1c;
+  text-align: center;
+  color: #fff;
+}
+
+.cta h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta .button {
+  background-color: #ff9800;
+  color: #121212;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta .button:hover {
+  background-color: #ffb74d;
+  transform: scale(1.05);
+}

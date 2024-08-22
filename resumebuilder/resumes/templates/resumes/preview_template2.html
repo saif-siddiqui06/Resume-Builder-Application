@@ -1,0 +1,121 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/template2.css' %}">
+
+{% block content %}
+<style>
+  .resume-template {
+    font-family: 'Georgia', serif;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    {% if not is_pdf %}
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    {% endif %}
+  }
+  
+  {% if not is_pdf %}
+  body {
+    background: linear-gradient(-11deg, black, transparent);
+  }
+  {% endif %}
+  
+  .resume-template h1 {
+    font-size: 30px;
+    color: #ff5733;
+    margin-bottom: 5px;
+  }
+  
+  .resume-template p {
+    margin: 0;
+    padding: 2px 0;
+  }
+  
+  .resume-template h2 {
+    font-size: 22px;
+    color: #ff5733;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+  }
+  
+  .resume-template ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .resume-template .contact-info {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .personal {
+    text-align: center;
+  }
+  
+  .resume-template .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .resume-template .button-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .resume-template .button-container a:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<div class="resume-template">
+  <div class="personal">
+    <h1>{{ form_data.first_name }} {{ form_data.last_name }}</h1>
+    <p class="contact-info">
+        {{ form_data.address }} <br>
+        {{ form_data.phone }} | {{ form_data.email }} <br>
+        {{ form_data.linkedin }} | {{ form_data.github }}
+    </p>
+  </div>
+  
+  <h2>Objective</h2>
+  <p>{{ form_data.objective }}</p>
+
+  <h2>Education</h2>
+  <ul>
+      <li>{{ form_data.education }}</li>
+  </ul>
+
+  <h2>Skills</h2>
+  <ul>
+      <li>{{ form_data.skills }}</li>
+  </ul>
+
+  <h2>Projects</h2>
+  <ul>
+      <li>{{ form_data.projects }}</li>
+  </ul>
+
+  <h2>Work Experience</h2>
+  <ul>
+      <li>{{ form_data.experience }}</li>
+  </ul>
+
+  {% if not is_pdf %}
+  <div class="button-container">
+    <a href="{% url 'download_pdf' %}?template=template2" class="btn btn-primary">Download PDF</a>
+    <a href="{% url 'resume_templates' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

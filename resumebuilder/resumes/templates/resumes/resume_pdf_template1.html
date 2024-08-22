@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <style>
+        /* Add any necessary styles for the resume */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #000;
+            margin-bottom: 10px;
+        }
+        .section-content {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {{ form_data.full_name }}
+    </div>
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="section-content">
+            {{ form_data.professional_summary }}
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title">Experience</div>
+        <div class="section-content">
+            {{ form_data.experience }}
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="section-content">
+            {{ form_data.education }}
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title">Skills</div>
+        <div class="section-content">
+            {{ form_data.skills }}
+        </div>
+    </div>
+</body>
+</html>

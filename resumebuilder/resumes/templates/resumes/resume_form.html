@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Resume{% endblock %}
+
+{% block content %}
+<style>
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #1a1a1a;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        color: #e0e0e0;
+    }
+
+    .text-center {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.2em;
+        color: white;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .resume-form label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #ff9800;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #2a2a2a;
+        color: #ffffff;
+        font-size: 1em;
+    }
+
+    .btn-submit {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        background-color: #ff9800;
+        color: #121212;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-submit:hover {
+        background-color: #ffb74d;
+        transform: scale(1.05);
+    }
+</style>
+<div class="container">
+    <h1 class="text-center">Create Your Professional Resume</h1>
+    <form method="post" class="resume-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-submit">Next</button>
+    </form>
+</div>
+{% endblock %}
+

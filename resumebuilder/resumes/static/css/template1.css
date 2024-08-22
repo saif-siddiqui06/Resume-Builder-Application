@@ -1,0 +1,17 @@
+.resume-template.template1 {
+  font-family: Arial, sans-serif;
+  color: blue;
+  background-color: aqua;
+}
+.resume-template.template1 h1 {
+  font-size: 24px;
+  color: #0056b3;
+}
+.resume-template.template1 h2 {
+  font-size: 20px;
+  color: #333;
+}
+.resume-template.template1 ul {
+  list-style-type: none;
+  padding: 0;
+}

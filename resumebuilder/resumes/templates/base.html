@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Resume Builder{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block extra_styles %}{% endblock %}
+    <style>body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(-11deg, black, transparent);
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Modify the nav bar and add a logo */
+      nav {
+        background-color: #333;
+        padding: 1%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      nav .logo {
+        display: flex;
+        align-items: center;
+      }
+      
+      nav .logo img {
+        height: 35px;
+        margin-right: 10px;
+
+      }
+      nav .logo span {
+        color: white;
+      }
+      
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+      }
+      
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        position: relative;
+        transition: color 0.3s ease-in-out;
+      }
+      
+      nav ul li a:hover {
+        color: #f0ad4e; /* Hover color change */
+      }
+      
+      nav ul li a::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #f0ad4e;
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      nav ul li a:hover::after {
+        transform: scaleX(1);
+      }
+      
+      .container {
+        width: 80%;
+        margin: 2em auto;
+        padding: 2em;
+    
+      }
+      
+      h1, h2, h3 {
+        color: #333;
+      }
+      
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #5cb85c;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      
+      .button:hover {
+        background-color: #4cae4c;
+      }
+      
+      /* Modify templates section */
+      .templates {
+        display: flex;
+        justify-content: space-around;
+      }
+      
+      .template img {
+        width: 200px;
+        height: 300px;
+        border: 1px solid #ccc;
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .template img:hover {
+        transform: rotateY(180deg);
+      }
+      
+      .template {
+        text-align: center;
+      }
+      
+      /* Style resume sections */
+      .resume {
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-top: 20px;
+        background-color: #fff;
+      }
+      .box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 20px;
+      }
+      /* Side by side layout for left and right boxes with new colors */
+      .left {
+        width: 48%;
+        padding: 2em;
+      
+      }
+      .right {
+        width: 48%;
+        padding: 2em;
+        
+      }
+      
+
+      .flex-container {
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      /* Add icon animation */
+      .resume-icon {
+        font-size: 24px;
+        margin-right: 10px;
+        color: #27ae60;
+        animation: flip 1.5s infinite;
+      }
+      
+      @keyframes flip {
+        0% { transform: rotateY(0); }
+        50% { transform: rotateY(180deg); }
+        100% { transform: rotateY(360deg); }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="{% static 'images/cv.png' %}" alt="Logo">
+        <span>Resume Builder</span>
+      </div>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'resume_form' %}">Create Resume</a></li>
+        <li><a href="{% url 'resume_templates' %}">Templates</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

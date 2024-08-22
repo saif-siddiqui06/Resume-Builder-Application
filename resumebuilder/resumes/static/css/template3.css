@@ -1,0 +1,16 @@
+.resume-template.template3 {
+  font-family: 'Tahoma', sans-serif;
+  color: #555;
+}
+.resume-template.template3 h1 {
+  font-size: 28px;
+  color: #27ae60;
+}
+.resume-template.template3 h2 {
+  font-size: 24px;
+  color: #27ae60;
+}
+.resume-template.template3 ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}

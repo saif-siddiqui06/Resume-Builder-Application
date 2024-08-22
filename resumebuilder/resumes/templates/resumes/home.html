@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% block title %}Home - Resume Builder{% endblock %}
+
+{% block content %}
+<style>/* Base Dark Theme Colors */
+    body {
+        background-color: #181818;
+        color: #f5f5f5;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(to right, #212121, #424242);
+        padding: 60px 20px;
+        text-align: center;
+        color: white;
+    }
+    
+    .hero h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        color: white;
+    }
+    
+    .hero p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+    }
+    
+    .hero .button {
+        background-color: #ff9800;
+        color: #121212;
+        padding: 12px 25px;
+        font-size: 1.1em;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .hero .button:hover {
+        background-color: #ffb74d;
+        transform: scale(1.05);
+    }
+    
+    /* Features Section */
+    .features {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #1c1c1c;
+    }
+    
+    .features h2 {
+        color: #ff9800;
+        margin-bottom: 40px;
+    }
+    
+    .feature-cards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .feature-card {
+        background-color: #252525;
+        padding: 20px;
+        border-radius: 10px;
+        width: 30%;
+        margin-bottom: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .feature-card h3 {
+        margin-top: 15px;
+        color: #ffeb3b;
+    }
+    
+    .feature-card p {
+        color: #e0e0e0;
+    }
+    
+    .feature-card img {
+        max-width: 60px;
+        margin-bottom: 15px;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Testimonials Section */
+    .testimonial {
+        padding: 60px 20px;
+        background: linear-gradient(to right, #1a1a1a, #2c2c2c);
+        color: #fff;
+        text-align: center;
+    }
+    
+    .testimonial h2 {
+        color: #ff9800;
+        margin-bottom: 40px;
+    }
+    
+    .testimonial-cards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .testimonial-card {
+        background-color: #333333;
+        padding: 20px;
+        border-radius: 10px;
+        width: 45%;
+        margin-bottom: 20px;
+    }
+    
+    .testimonial-card p {
+        font-size: 1.1em;
+        color: #e0e0e0;
+    }
+    
+    .testimonial-card footer {
+        margin-top: 15px;
+        font-style: italic;
+        color: #ffeb3b;
+    }
+    
+    /* ATS Tips Section */
+    .ats-tips {
+        padding: 60px 20px;
+        background-color: #252525;
+        color: #cfcfcf;
+        text-align: left;
+        line-height: 1.6;
+    }
+    
+    .ats-tips h2 {
+        color: #ff9800;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .ats-tips ol {
+        margin-left: 20px;
+    }
+    
+    /* CTA Section */
+    .cta {
+        padding: 60px 20px;
+        background-color: #1c1c1c;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .cta h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    
+    .cta p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+    
+    .cta .button {
+        background-color: #ff9800;
+        color: #121212;
+        padding: 12px 25px;
+        font-size: 1.1em;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .cta .button:hover {
+        background-color: #ffb74d;
+        transform: scale(1.05);
+    }
+</style>    
+<div class="hero">
+    <div class="hero-content">
+        <h1>Welcome to the ATS-Friendly Resume Builder</h1>
+        <p>Create your professional resume in minutes using our intuitive and modern templates. Optimize your resume for Applicant Tracking Systems (ATS) and increase your chances of landing your dream job.</p>
+        <a href="{% url 'resume_form' %}" class="button">Create Your Resume Now</a>
+    </div>
+</div>
+
+<div class="features">
+    <h2>Why Choose Our Resume Builder?</h2>
+    <div class="feature-cards">
+        <div class="feature-card">
+            <img src="{% static 'icons/template.png' %}" alt="Templates">
+            <h3>ATS-Friendly Templates</h3>
+            <p>Choose from a variety of pre-designed, ATS-optimized templates that make your resume stand out.</p>
+        </div>
+        <div class="feature-card">
+            <img src="{% static 'icons/preview.png' %}" alt="Real-Time Preview">
+            <h3>Real-Time Preview</h3>
+            <p>See your resume come to life as you build it with our instant preview feature.</p>
+        </div>
+        <div class="feature-card">
+            <img src="{% static 'icons/customize.png' %}" alt="Customizable Sections">
+            <h3>Friendly template</h3>
+            <p>Easily make your resume, simple layout, quickly make your resume which save your time.</p>
+        </div>
+    </div>
+</div>
+
+<div class="testimonial">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-cards">
+        <div class="testimonial-card">
+            <p>"This resume builder made it so easy to create a professional resume that got me noticed by recruiters!"</p>
+            <footer>— Alex M., Software Engineer</footer>
+        </div>
+        <div class="testimonial-card">
+            <p>"I loved how the templates are optimized for ATS, which saved me a lot of time. Highly recommended!"</p>
+            <footer>— Priya R., Marketing Manager</footer>
+        </div>
+    </div>
+</div>
+
+<div class="ats-tips">
+    <h2>Tips for Creating an ATS-Friendly Resume</h2>
+    <ol>
+        <li>Use a simple, clean layout with clear headings to make your resume easy to read.</li>
+        <li>Avoid using images, graphics, or charts, as they can confuse ATS software.</li>
+        <li>Stick to standard fonts like Arial or Times New Roman to ensure compatibility.</li>
+        <li>Include relevant keywords from the job description to align with the ATS algorithm.</li>
+        <li>Save your resume in a format like PDF or DOCX that can be easily read by ATS.</li>
+    </ol>
+</div>
+
+<div class="cta">
+    <h2>Ready to Get Started?</h2>
+    <p>Create your professional resume today with our ATS-friendly builder and get ahead in your career.</p>
+    <a href="{% url 'resume_form' %}" class="button">Create Your Resume Now</a>
+</div>
+{% endblock %}

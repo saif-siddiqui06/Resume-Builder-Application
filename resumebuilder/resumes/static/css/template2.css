@@ -1,0 +1,16 @@
+.resume-template.template2 {
+  font-family: 'Georgia', serif;
+  color: #444;
+}
+.resume-template.template2 h1 {
+  font-size: 26px;
+  color: #ff5733;
+}
+.resume-template.template2 h2 {
+  font-size: 22px;
+  color: #ff5733;
+}
+.resume-template.template2 ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
